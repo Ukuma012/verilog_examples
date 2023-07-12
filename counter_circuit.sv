@@ -13,6 +13,7 @@ always_comb begin
     end
 end
 
+// Register
 always_ff @ (posedge CLK) begin
     if (RST) begin
         COUNT <= 4'd0;
