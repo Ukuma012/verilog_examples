@@ -24,5 +24,12 @@ always_comb begin
         end
     end
 end
-    
+
+always_ff @ (posedge CLK) begin
+    if (RST) begin
+        state <= STATE_OFF;
+    end else begin
+        state <= n_state:
+    end
+end
 endmodule
