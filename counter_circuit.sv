@@ -1,7 +1,7 @@
-module couter_circuit {
+module couter_circuit (
     input logic CLK, RST,
     output logic [3:0] COUNT
-};
+);
 
 logic [3:0] n_count;
 
