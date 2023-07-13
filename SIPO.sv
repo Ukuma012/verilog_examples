@@ -1,8 +1,8 @@
-module sipo_circuit {
+module sipo_circuit (
     input logic CLK, RST,
     input logic data_in,
     output logic [2:0] Q // parallel data
-};
+);
 
 logic [2:0] data_reg, next_data_reg;
 
