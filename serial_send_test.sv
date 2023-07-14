@@ -1,25 +1,20 @@
 module serial_send_test ();
-    // 内部信号の宣言
     logic CLK, RST;
     logic [7:0] DATA_IN;
     logic WE;
     logic DATA_OUT;
     logic BUSY;
 
-    // 検証対象の回路の貼り付け
     serial_send_circuit # (
-        .WAIT_COUNT_BASE(5)
-    )
-    ser (
+        .WAIT_COUNT_BASE(10))
+        ser (
         .CLK(CLK),
         .RST(RST),
         .DATA_IN(DATA_IN),
         .WE(WE),
         .DATA_OUT(DATA_OUT),
-        .BUSY(BUSY)
-    );
+        .BUSY(BUSY));
 
-    // 入力のパターン
     always begin
         CLK <= 1'b1; #10;
         CLK <= 1'b0; #10;

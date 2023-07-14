@@ -35,12 +35,12 @@ always_comb begin
     end else if (state == STATE_SEND) begin
         BUSY = 1'b1;
         if (wait_count == WAIT_COUNT_BASE - 1) begin
-            if (bit_count == 4'b9) begin
+            if (bit_count == 4'd9) begin
                 next_state = STATE_IDLE;
                 next_wait_count = 0;
                 next_bit_count = 4'd0; 
             end else begin
-                next_data_reg = {1'b1, data_reg[9:1]}
+                next_data_reg = {1'b1, data_reg[9:1]};
                 next_wait_count = 0;
                 next_bit_count = bit_count + 1'b1;
             end
@@ -50,7 +50,7 @@ always_comb begin
     end
 end
 
-always always_ff @( CLK ) begin
+always_ff @( CLK ) begin
     if (RST) begin
         state <= STATE_IDLE;
         wait_count <= 0;
