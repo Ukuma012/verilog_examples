@@ -5,7 +5,7 @@ module serial_fpga (
 	typedef enum {
 		STATE_SEND,
 		STATE_WAIT,
-		STATE_FIN,
+		STATE_FIN
 	} state_type;
 
 	state_type state, next_state;
